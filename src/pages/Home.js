@@ -87,6 +87,7 @@ const Home = () => {
           destination: data.destination,
         })
       );
+      setCharacterDef("")
       resetForm();
     },
   });
