@@ -150,63 +150,49 @@ const Home = () => {
               </div>
               {/* <!-- Dropdown menu --> */}
               {dropdown && (
-                // <div
-                //   id="dropdown"
-                //   class="relative w-56 z-50 bg-white divide-gray-100 rounded shadow w-44 dark:bg-gray-700"
-                // >
-                //   <ul
-                //     class="absolute z-50 text-sm text-gray-700 dark:text-gray-200"
-                //     aria-labelledby="dropdownDefault"
-                //   >
-                //     <li>
-                //       <div className="w-44 bg-purple-200 hover:bg-purple-300 rounded-md">
-                //         <p
-                //           //   onClick={() =>
-                //           //     capturaValorProyecto(
-                //           //       options.nombre,
-                //           //       options.valor_lote
-                //           //     )
-                //           //   }
-                //           class="cursor-pointer block px-4 py-2 dark:hover:bg-gray-600 dark:hover:text-white"
-                //         >
-                //           <p>Personajes</p>
-                //         </p>
-                //       </div>
-                //     </li>
+                <div
+                  id="dropdown"
+                  class="relative w-56 z-50 bg-white divide-gray-100 rounded shadow w-44 dark:bg-gray-700"
+                >
+                  <ul
+                    class="absolute z-50 text-sm text-gray-700 dark:text-gray-200"
+                    aria-labelledby="dropdownDefault"
+                  >
+                    <li>
+                      <div className="w-44 bg-purple-200 hover:bg-purple-300 rounded-md">
+                        <p
+                          //   onClick={() =>
+                          //     capturaValorProyecto(
+                          //       options.nombre,
+                          //       options.valor_lote
+                          //     )
+                          //   }
+                          class="cursor-pointer block px-4 py-2 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >
+                          <p>info</p>
+                        </p>
+                      </div>
+                    </li>
 
-                //     <li>
-                //       <div className="w-44 bg-purple-200 hover:bg-purple-300 rounded-md">
-                //         <p
-                //           //   onClick={() =>
-                //           //     capturaValorProyecto(
-                //           //       options.nombre,
-                //           //       options.valor_lote
-                //           //     )
-                //           //   }
-                //           class="cursor-pointer block px-4 py-2 dark:hover:bg-gray-600 dark:hover:text-white"
-                //         >
-                //           <p>Personajes</p>
-                //         </p>
-                //       </div>
-                //     </li>
-                //     {/* {options &&
-                //     options.map((options) => (
-                //       <li>
-                //         <p
-                //           onClick={() =>
-                //             capturaValorProyecto(
-                //               options.nombre,
-                //               options.valor_lote
-                //             )
-                //           }
-                //           class="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                //         >
-                //           <p>{options.nombre}</p>
-                //         </p>
-                //       </li>
-                //     ))} */}
-                //   </ul>
-                // </div>
+                  
+                    {/* {options &&
+                    options.map((options) => (
+                      <li>
+                        <p
+                          onClick={() =>
+                            capturaValorProyecto(
+                              options.nombre,
+                              options.valor_lote
+                            )
+                          }
+                          class="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                        >
+                          <p>{options.nombre}</p>
+                        </p>
+                      </li>
+                    ))} */}
+                  </ul>
+                </div>
               )}
             </div>
             <div>
