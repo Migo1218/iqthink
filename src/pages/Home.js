@@ -228,18 +228,19 @@ const Home = () => {
                   key={adventure.id}
                   className="bg-white mt-5 shadow-md mb-5 rounded-md w-4/5"
                 >
-                  <div className="grid grid-cols-4">
+                  <div className="ml-5 sm:grid sm:grid-cols-4">
                     {/* Primer div img  */}
 
-                    <div className="w-24 w-20 m-1">
+                    <div className="w-24 w-20 mt-2">
                       <img
+                      className=""
                         src="https://res.cloudinary.com/dwhhfl68n/image/upload/v1658296208/iqthink/Placeholder_Mordor_1_w4u5zr.png"
                         alt=""
                       />
                     </div>
 
                     <div className="col-span-3">
-                      <h1 className="text-blue-600">
+                      <h1 className="text-center lg:text-left text-blue-600 mb-2">
                         {adventure.adventurename}
                       </h1>
                       <div className="grid grid-cols-2">
@@ -247,7 +248,7 @@ const Home = () => {
                           <p>{adventure.name}</p>
                           <p className="text-gray-400">{adventure.race}</p>
                         </div>
-                        <div>
+                        <div className="pb-5">
                           <p className="text-gray-400">
                             Origin:{" "}
                             <span className="text-black">
