@@ -51,7 +51,7 @@ const Dashboard = () => {
               </div>
             </div>
             <ul className="pt-6">
-              <li className="flex  rounded-md p-2 cursor-pointer hover:bg-lime-600 font-semibold text-letter-color text-sm items-center gap-x-4">
+              <li className="flex  rounded-md p-2 cursor-pointer hover:bg-purple-200 font-semibold text-letter-color text-sm items-center gap-x-4">
                 <span class="material-symbols-outlined">dashboard</span>
 
                 <span
@@ -61,7 +61,7 @@ const Dashboard = () => {
                 </span>
               </li>
 
-              <li className="flex  rounded-md p-2 cursor-pointer hover:bg-lime-600 font-semibold text-letter-color text-sm items-center gap-x-4">
+              <li className="flex  rounded-md p-2 cursor-pointer hover:bg-purple-200 font-semibold text-letter-color text-sm items-center gap-x-4">
                 <span class="material-symbols-outlined">calendar_month</span>
 
                 <span
@@ -71,7 +71,7 @@ const Dashboard = () => {
                 </span>
               </li>
 
-              <li className="flex  rounded-md p-2 cursor-pointer hover:bg-lime-600 font-semibold text-letter-color text-sm items-center gap-x-4">
+              <li className="flex  rounded-md p-2 cursor-pointer hover:bg-purple-200 font-semibold text-letter-color text-sm items-center gap-x-4">
                 <span class="material-symbols-outlined">android</span>
 
                 <span
@@ -81,7 +81,7 @@ const Dashboard = () => {
                 </span>
               </li>
 
-              <li className="flex  rounded-md p-2 cursor-pointer hover:bg-lime-600 font-semibold text-letter-color text-sm items-center gap-x-4">
+              <li className="flex  rounded-md p-2 cursor-pointer hover:bg-purple-200 font-semibold text-letter-color text-sm items-center gap-x-4">
                 <span class="material-symbols-outlined">forum</span>
 
                 <span
@@ -91,7 +91,7 @@ const Dashboard = () => {
                 </span>
               </li>
 
-              <li className="flex rounded-md p-2 cursor-pointer hover:bg-lime-600 font-semibold text-letter-color text-sm items-center gap-x-4">
+              <li className="flex rounded-md p-2 cursor-pointer hover:bg-purple-200 font-semibold text-letter-color text-sm items-center gap-x-4">
                 <span class="material-symbols-outlined">logout</span>
 
                 <span
