@@ -8,7 +8,7 @@ export const adventureSlice = createSlice({
     },
     reducers:{
         setlistAdventures : (state, action) => {
-            console.log(action.payload);
+            // console.log(action.payload);
              const newAdventures = [...state.listAdventures, action.payload  ];
              state.listAdventures = newAdventures;
         }

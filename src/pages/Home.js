@@ -10,8 +10,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { setlistAdventures } from "../store/slices/adventuresSlice";
 
 const Home = () => {
-  let adventures = useSelector((state) => state.adventures.listAdventures);
-  
+  const adventures = useSelector((state) => state.adventures.listAdventures);
+ 
+
 
   // ESTADOS
   const [isOpen, setIsOpen] = useState(false);
@@ -91,20 +92,19 @@ const Home = () => {
   });
 
   const [options, setOptions] = useState();
-  console.log(options);
+  // console.log(options);
 
   const getCharacters = () => {
     drop();
-    console.log(adventures);
+    // console.log(adventures);
     setOptions(adventures);
   };
 
-  const filtrarPersonaje = (charactername) => {
-    console.log(charactername);
-  adventures = adventures.filter((adventure) => adventure.name === charactername);
-  console.log(adventures);
+  // const filtrarPersonaje = (charactername) => {
+  //   setCharactername(charactername);
+  
 
-  }
+  // }
   //   SLIDEOVER
   usePreventScroll({ isDisabled: !isOpen });
   return (
@@ -162,7 +162,7 @@ const Home = () => {
                     
                           <li>
                             <div 
-                            onClick={() => filtrarPersonaje(option.name)}
+                            // onClick={() => filtrarPersonaje(option.name)}
                             className="w-44 bg-purple-200 hover:bg-purple-300 rounded-md">
                               <p class="cursor-pointer block px-4 py-2 dark:hover:bg-gray-600 dark:hover:text-white">
                                 {option.name}
