@@ -10,8 +10,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { setlistAdventures } from "../store/slices/adventuresSlice";
 
 const Home = () => {
-    const adventures = useSelector((state) => state.adventures.listAdventures);
-    // console.log(adventures);
+  let adventures = useSelector((state) => state.adventures.listAdventures);
+  
+
   // ESTADOS
   const [isOpen, setIsOpen] = useState(false);
   const [isHeadlessOpen, setIsHeadlessOpen] = useState(false);
@@ -19,8 +20,8 @@ const Home = () => {
   const [dropdown2, setDropdown2] = useState(false);
   const [character, setCharacter] = useState("");
   const [chooseCharacter, setChooseCharacter] = useState([]);
-//   console.log(chooseCharacter);
-//   console.log(chooseCharacter.name);
+  //   console.log(chooseCharacter);
+  //   console.log(chooseCharacter.name);
 
   const handleOnClose = () => setIsOpen(false);
 
@@ -34,8 +35,6 @@ const Home = () => {
     setDropdown(!dropdown);
   };
 
-  
-
   const getFilterCharacter = () => {
     setDropdown2(!dropdown2);
 
@@ -47,20 +46,19 @@ const Home = () => {
       })
       .then((response) => {
         // Obtenemos los datos
-        // console.log(response.data.docs);
         setChooseCharacter(response.data.docs);
         // setOptions(response.data);
         // dispatch(setlistProyectosUser(response.data))
       })
       .catch((e) => {
-        // Capturamos los errores
+        // console.log(e);
       });
   };
 
   const [CharacterDef, setCharacterDef] = useState();
   const [adventureData, setAdventureData] = useState();
-//   console.log(CharacterDef);
-//   console.log(adventureData);
+  //   console.log(CharacterDef);
+  //   console.log(adventureData);
   const raceCharacter = (character) => {
     setCharacterDef(character);
     setDropdown2(!dropdown2);
@@ -74,12 +72,12 @@ const Home = () => {
       destination: "",
     },
     onSubmit: (data, { resetForm }) => {
-    //   console.log(data);
+      //   console.log(data);
       setAdventureData(data);
       setIsOpen(false);
       dispatch(
         setlistAdventures({
-            id: CharacterDef._id,
+          id: CharacterDef._id,
           name: CharacterDef.name,
           race: CharacterDef.race,
           adventurename: data.adventurename,
@@ -87,28 +85,26 @@ const Home = () => {
           destination: data.destination,
         })
       );
-      setCharacterDef("")
+      setCharacterDef("");
       resetForm();
     },
   });
 
+  const [options, setOptions] = useState();
+  console.log(options);
+
   const getCharacters = () => {
-    axios
-      .get(`https://the-one-api.dev/v2/character`, {
-        headers: {
-          Authorization: `Bearer r2JqZ124Otxg-ysVcJHS`,
-        },
-      })
-      .then((response) => {
-        // Obtenemos los datos
-        // console.log(response.data.docs);
-        // setOptions(response.data);
-        // dispatch(setlistProyectosUser(response.data))
-      })
-      .catch((e) => {
-        // Capturamos los errores
-      });
+    drop();
+    console.log(adventures);
+    setOptions(adventures);
   };
+
+  const filtrarPersonaje = (charactername) => {
+    console.log(charactername);
+  adventures = adventures.filter((adventure) => adventure.name === charactername);
+  console.log(adventures);
+
+  }
   //   SLIDEOVER
   usePreventScroll({ isDisabled: !isOpen });
   return (
@@ -124,7 +120,7 @@ const Home = () => {
             <div>
               <div className="w-56">
                 <button
-                  onClick={() => drop()}
+                  onClick={() => getCharacters()}
                   id="dropdownDefault"
                   data-dropdown-toggle="dropdown"
                   class="inline-flex items-center text-white bg-gray-200 hover:bg-purple-600 focus:ring-2 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -155,44 +151,29 @@ const Home = () => {
                   id="dropdown"
                   class="relative w-56 z-50 bg-white divide-gray-100 rounded shadow w-44 dark:bg-gray-700"
                 >
-                  <ul
-                    class="absolute z-50 text-sm text-gray-700 dark:text-gray-200"
-                    aria-labelledby="dropdownDefault"
-                  >
-                    <li>
-                      <div className="w-44 bg-purple-200 hover:bg-purple-300 rounded-md">
-                        <p
-                          //   onClick={() =>
-                          //     capturaValorProyecto(
-                          //       options.nombre,
-                          //       options.valor_lote
-                          //     )
-                          //   }
-                          class="cursor-pointer block px-4 py-2 dark:hover:bg-gray-600 dark:hover:text-white"
+                 
+                      
+                        <ul
+                          class="absolute z-50 text-sm text-gray-700 dark:text-gray-200"
+                          aria-labelledby="dropdownDefault"
                         >
-                          <p>info</p>
-                        </p>
-                      </div>
-                    </li>
-
-                  
-                    {/* {options &&
-                    options.map((options) => (
-                      <li>
-                        <p
-                          onClick={() =>
-                            capturaValorProyecto(
-                              options.nombre,
-                              options.valor_lote
-                            )
-                          }
-                          class="cursor-pointer block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                        >
-                          <p>{options.nombre}</p>
-                        </p>
-                      </li>
-                    ))} */}
-                  </ul>
+                          {
+                  options && options.map((option) => (
+                    
+                          <li>
+                            <div 
+                            onClick={() => filtrarPersonaje(option.name)}
+                            className="w-44 bg-purple-200 hover:bg-purple-300 rounded-md">
+                              <p class="cursor-pointer block px-4 py-2 dark:hover:bg-gray-600 dark:hover:text-white">
+                                {option.name}
+                              </p>
+                            </div>
+                          </li>
+                  ))
+                 }
+                        </ul>
+                      
+                    
                 </div>
               )}
             </div>
@@ -220,7 +201,7 @@ const Home = () => {
 
                     <div className="w-24 w-20 mt-2">
                       <img
-                      className=""
+                        className=""
                         src="https://res.cloudinary.com/dwhhfl68n/image/upload/v1658296208/iqthink/Placeholder_Mordor_1_w4u5zr.png"
                         alt=""
                       />
